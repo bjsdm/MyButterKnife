@@ -1,4 +1,4 @@
-﻿## ButterKnife的应用
+## ButterKnife的应用
 
 如题所示，这篇文章主要讲解手把手教学写个简易版 ButterKnife，所以，还是先看看 ButterKnife 怎么使用，不过大多数人都用过，就不详细介绍，若有需要，请参考：
 
@@ -412,11 +412,32 @@ public class MyBindingProcessor extends AbstractProcessor {
 
 <img src="https://img-blog.csdnimg.cn/20210326111253754.jpg" width = "650" >
 
+<p>
+
 <img src="https://img-blog.csdnimg.cn/20210326111339727.jpg" width = "150" >
 
 完结撒花，✿✿ヽ(°▽°)ノ✿
 
+em...突然记起一件事，因为自动生成代码时在编译时间段执行的，所以注解在编译后，也就是字节码阶段是不需要存在的，所以，将其改为保留在源码阶段即可。
 
+```
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.SOURCE)
+public @interface MyBindView {
+    int value();
+}
+```
+
+源码地址：
+
+
+<a href="https://github.com/bjsdm/MyButterKnife">https://github.com/bjsdm/MyButterKnife</a>
+
+---
+
+这是我的公众号，关注获取第一信息！！欢迎关注支持下，谢谢！
+
+<img src="https://img-blog.csdnimg.cn/20210318100217713.png" width = "500" >
 
 
 
